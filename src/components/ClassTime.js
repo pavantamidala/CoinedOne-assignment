@@ -18,7 +18,7 @@ function ConnectedClassTime(props) {
     let loading = props.store.loading
     return (
         <React.Fragment>
-            <h1> Class Time</h1>
+            
             {loading === false && <div>
                 <RoundChart labels={labels} data={values} />
                 <DeviceUsage deviceUsage={deviceUsage} />

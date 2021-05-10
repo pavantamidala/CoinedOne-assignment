@@ -19,7 +19,7 @@ function ConnectedAllScreenTime(props) {
     console.log(props)
     return (
         <React.Fragment>
-           <h1>hello</h1>
+           
            
             {loading === false && <div>
                 <RoundChart labels={labels} data={data} />

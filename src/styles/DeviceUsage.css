@@ -1,0 +1,11 @@
+.device-usage{
+    border: 1px solid black;
+    width: 300px;
+}
+.phone{
+    /* border-bottom: 1px solid black; */
+    margin-top: 6px;
+}
+.detail{
+    color: blue;
+}

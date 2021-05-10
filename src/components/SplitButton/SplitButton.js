@@ -10,14 +10,37 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import {useHistory} from 'react-router-dom'
-
+import '../../styles/SplitButton.css';
+import CustomizedRadios from '../RadioButton/RadioButton'
 
 
 
 const options = ["Class Time", "ALL Time", "Study Time","Free Time"];
 let routes = ["classtime","/","studytime","freetime"]
 export default function SplitButton(props) {
-   
+    
+    let currentlyActive = "All Time"
+    
+    function selectedItem(path) {
+        switch (path) {
+            case "/":
+                currentlyActive = "All Time"
+                return currentlyActive
+            case "/classtime":
+                currentlyActive = "Class Time"
+                return currentlyActive
+            case "/studytime":
+                currentlyActive = "Study Time"
+                return currentlyActive
+            case "/freetime":
+                currentlyActive = "Free Time"
+                return currentlyActive
+            default:
+                currentlyActive = "All Time"
+                return currentlyActive;
+        }
+    }
+    
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
     const [selectedIndex, setSelectedIndex] = React.useState(1);
@@ -25,32 +48,33 @@ export default function SplitButton(props) {
     const handleClick = () => {
         console.info(`You clicked ${options[selectedIndex]}`);
     };
-   
-
+    
+    
     const handleMenuItemClick = (event, index) => {
-        setSelectedIndex(index);
+        
         setOpen(false);
     };
-
+    
     const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
     };
-
+    
     const handleClose = (event) => {
         if (anchorRef.current && anchorRef.current.contains(event.target)) {
             return;
         }
-
+        
         setOpen(false);
     };
-let history = useHistory()
-
-
+    let history = useHistory()
+    
+    selectedItem(history.location.pathname)
+    
     return (
         <Grid container direction="column" alignItems="center">
             <Grid item xs={12}>
                 <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
-                    <Button onClick={handleClick}>{options[selectedIndex]}</Button>
+                    <Button onClick={handleClick}>{currentlyActive}</Button>
                    
                     <Button
                         color="primary"
@@ -75,18 +99,7 @@ let history = useHistory()
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList id="split-button-menu">
-                                        {options.map((option, index) => (
-                                            <MenuItem
-                                                key={option}
-                                                
-                                                selected={index === props.currentlyActive}
-                                                onClick={(event) =>{handleMenuItemClick(event, index)
-                                                history.push(routes[index])
-                                                }}
-                                            >
-                                                {option}
-                                            </MenuItem>
-                                        ))}
+                                            <CustomizedRadios setOpen={setOpen} onClick={(e)=>handleMenuItemClick(e)} />
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>

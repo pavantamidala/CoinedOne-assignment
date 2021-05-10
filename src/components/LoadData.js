@@ -12,33 +12,11 @@ function ConnectLoadData(props) {
     console.log("loading data")
     let history = useHistory()
     console.log(history.location.pathname)
-    let currentlyActive = "All Time"
-
-    function selectedItem(path) {
-        switch (path) {
-            case "/":
-                currentlyActive = "All Time"
-                return currentlyActive
-            case "/classtime":
-                currentlyActive = "Class Time"
-                return currentlyActive
-            case "/studytime":
-                currentlyActive = "Study Time"
-                return currentlyActive
-            case "/freetime":
-                currentlyActive = "Free Time"
-                return currentlyActive
-            default:
-                currentlyActive = "All Time"
-                return currentlyActive;
-        }
-    }
-    selectedItem(history.location.pathname)
-    console.log(Location.pathname)
+    
     return(
         <React.Fragment>
             <h1> Load data </h1>
-            <SplitButton currentlyActive={currentlyActive} />
+            <SplitButton  />
         </React.Fragment>
     )
 }
