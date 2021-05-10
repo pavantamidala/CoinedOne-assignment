@@ -1,8 +1,10 @@
 import './App.css';
 import AppRouter from './routes/AppRouter'
-
-
-function App() {
+import React, { useEffect } from 'react';
+import {connect} from 'react-redux'
+import axios from 'axios'
+// import chartDataAction from './actions/chartDataAction'
+let App = function(props) {
   return (
     <div className="App">
       <AppRouter />
@@ -10,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

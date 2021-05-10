@@ -1,15 +1,10 @@
-import React from 'react'
-import {Doughnut} from 'react-chartjs-2'
-import '../styles/chardata.css';
-
-
-function ChartData(props) {
+export default function mockdata(labels,data){
     const mockdata = {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: labels,
         datasets: [
             {
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data:data,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -30,21 +25,5 @@ function ChartData(props) {
             },
         ],
     };
-    
-    return (
-        <div className="chart-container">
-            <Doughnut data={mockdata} options={{
-                responsive:true,
-                    maintainAspectRatio: false,
-                }} />
-        </div>
-    )
+    return mockdata
 }
-
-// const ConnectedChartData = connect((store)=>{
-//     return {
-//         "store":store,
-//         "name":"pavan"
-//     }
-// })(ChartData)
-export default ChartData
