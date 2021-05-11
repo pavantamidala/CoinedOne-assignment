@@ -25,7 +25,7 @@ function ConnectedAllScreenTime(props) {
            <div className="nested-div">
             {loading === false && <div className="alltime-container">
                 <div className="round-chart">
-                <RoundChart labels={labels} data={data} />
+                <RoundChart title="All Screen Time" labels={labels} data={data} />
                 </div>
                 <div className="range-chart">
                         <LineChart freeTime={temporary.freeTime.total} freeTimeMaxUsage={props.store.data.freeTimeMaxUsage} />

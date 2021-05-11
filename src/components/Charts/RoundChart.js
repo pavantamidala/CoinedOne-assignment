@@ -4,7 +4,7 @@ import mockdata from '../../mockdata/mockdata';
 
 // style = {{ width: "220px", height: "200px" }}
 function RoundChart(props) {
-    console.log(Doughnut)
+    console.log(props)
     return (
 
         <div >
@@ -14,7 +14,7 @@ function RoundChart(props) {
                 plugins: {
                     title: {
                         display: true,
-                        text: "All Screen Time",
+                        text: props.title,
                         fontSize: 20
                     }, legend: {
                         display: true,

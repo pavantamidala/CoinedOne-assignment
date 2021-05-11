@@ -25,7 +25,7 @@ import LineChart from './Charts/LineChart'
 
                 {loading === false && <div className="alltime-container">
                     <div className="round-chart">
-                        <RoundChart labels={labels} data={values} />
+                        <RoundChart title="Free Time" labels={labels} data={values} />
                     </div>
                     <div className="range-chart">
                         <LineChart freeTime={temporary.chartData.freeTime.total} freeTimeMaxUsage={props.store.data.freeTimeMaxUsage} />

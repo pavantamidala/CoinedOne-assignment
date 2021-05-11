@@ -24,7 +24,7 @@ function ConnectedClassTime(props) {
             {loading === false && <div className="alltime-container">
                 <div className="round-chart">
 
-                <RoundChart  labels={labels} data={values} />
+                <RoundChart title="Class Time"  labels={labels} data={values} />
                 </div>
                 <div className="device-usage-data">
                 <DeviceUsage deviceUsage={deviceUsage} />
