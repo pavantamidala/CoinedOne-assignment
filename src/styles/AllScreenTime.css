@@ -22,7 +22,7 @@ border-radius: 5px;
     border-right: 1px solid #d8e3e7;
     height: 100%;
 }
-.line-chart{
+.range-chart{
     border-right: 1px solid #d8e3e7;
     height: 100%;
 }
@@ -31,11 +31,11 @@ border-radius: 5px;
     height: 100%;
 }
 /* profile 30px */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
     html,body{
         width: 100%;
-        height: 100%;
-         background: #FFFFFF;
+        height: 1050 !important;
+         /* background: #E5E5E5 !important; */
     }
     .nested-div{
     display: grid;
@@ -45,7 +45,7 @@ border-radius: 5px;
 }
     .alltime-container{
         display: grid;
-        grid-template-rows: repeat(5,260px);
+        grid-template-rows:  repeat(5,260px);
         width: 300px;
         height: 100vh;
         grid-auto-flow: row;
@@ -56,11 +56,18 @@ border-radius: 5px;
     .round-chart{
         grid-row-start: 3;
         grid-row-end: 4;
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid #d8e3e7 ;
     }
-    .line-chart{
+    .range-chart{
          background: #FFFFFF;
+         border-right: none;
+        border-left: none;
+        border-bottom: 1px solid #d8e3e7 ;
     }
     .device-usage-data{
  background: #FFFFFF;
     }
+
 }
