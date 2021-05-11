@@ -21,7 +21,7 @@ function ConnectStudyTime(props) {
         <React.Fragment>
             
             <div className="nested-div">
-                {loading === true && <h3>Loadin...</h3>}
+                {loading === true && <h3>Loading...</h3>}
                 {loading === false && <div className="alltime-container">
                     <div className="round-chart">
 
