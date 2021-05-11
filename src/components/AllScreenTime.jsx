@@ -18,7 +18,7 @@ function ConnectedAllScreenTime(props) {
       deviceUsage = {mobile:deviceUsageTemp.totalTime.mobile,laptop:deviceUsageTemp.totalTime.laptop}
     }
     let loading = props.store.loading
-    console.log(props)
+    
     return (
         <React.Fragment>
            

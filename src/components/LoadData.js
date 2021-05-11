@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Header from './header/Header'
 import {connect} from 'react-redux';
-import {getChartData} from '../store/store'
+import {getChartData} from '../Redux-store/store'
 import SplitButton from './SplitButton/SplitButton'
 
 function ConnectLoadData(props) {

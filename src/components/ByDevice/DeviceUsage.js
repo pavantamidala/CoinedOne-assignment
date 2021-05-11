@@ -5,7 +5,7 @@ import { IconContext } from "react-icons";
 import "../../styles/DeviceUsage.css";
 import timeConvert from '../../methods/minutesToHours'
 function DeviceUsage(props) {
-  console.log(props)
+ 
     const [lapHours,lapMin] = timeConvert(props.deviceUsage.laptop)
     const [phoneHours,phoneMin] = timeConvert(props.deviceUsage.mobile)
     let laptop = lapHours !==0?`${lapHours}h.${lapMin}m`: `${lapMin} m`

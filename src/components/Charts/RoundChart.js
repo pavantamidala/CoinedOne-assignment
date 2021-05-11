@@ -4,7 +4,7 @@ import mockdata from '../../mockdata/mockdata';
 
 // style = {{ width: "220px", height: "200px" }}
 function RoundChart(props) {
-    console.log(props)
+    
     return (
 
         <div >
