@@ -10,7 +10,8 @@ import StudyTime from '../components/StudyTime'
 export default function AppRouter() {
 
     return (
-        <div>
+        <React.Fragment>
+
             <BrowserRouter>
             <LoadApp></LoadApp>
                     <Route path="/" exact >
@@ -26,6 +27,7 @@ export default function AppRouter() {
                     <StudyTime exact   />
                 </Route>
             </BrowserRouter>
-        </div>
+        </React.Fragment>
+        
     )
 }

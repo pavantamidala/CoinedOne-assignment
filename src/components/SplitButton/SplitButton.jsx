@@ -9,8 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-import {useHistory} from 'react-router-dom'
-import '../../styles/SplitButton.css';
+import {useHistory} from 'react-router-dom';
 import CustomizedRadios from '../RadioButton/RadioButton'
 
 
@@ -71,7 +70,8 @@ export default function SplitButton(props) {
     selectedItem(history.location.pathname)
     
     return (
-        <Grid container direction="column" alignItems="center">
+        
+        <Grid container direction="column"  alignItems="center">
             <Grid item xs={12}>
                 <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
                     <Button onClick={handleClick}>{currentlyActive}</Button>
@@ -88,7 +88,7 @@ export default function SplitButton(props) {
                         <ArrowDropDownIcon />
                     </Button>
                 </ButtonGroup>
-                <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+                <Popper open={open} placement="bottom-start" anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (
                         <Grow
                             {...TransitionProps}
@@ -99,6 +99,7 @@ export default function SplitButton(props) {
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList id="split-button-menu">
+
                                             <CustomizedRadios setOpen={setOpen} onClick={(e)=>handleMenuItemClick(e)} />
                                     </MenuList>
                                 </ClickAwayListener>

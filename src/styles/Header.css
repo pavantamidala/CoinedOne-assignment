@@ -1,0 +1,28 @@
+.profile{
+   display: grid;
+   grid-template-columns: 60px 40px repeat(6,minmax(30px,1fr));
+   grid-auto-flow: column;
+   width: 100vw;
+   background: linear-gradient(90.96deg, rgba(48, 118, 222, 0.4) 1.05%, rgba(241, 108, 11, 0.13) 99.89%);
+
+}
+.profile-name{
+font-weight: bold;
+ font-size: 22px;
+ line-height: 33px;
+color: #022742;
+justify-self: flex-start;
+align-self: center;
+grid-column-start: 3;
+grid-column-end: 7;
+}
+.profile-menu{
+    justify-self: center;
+    grid-column-end: -1;
+}
+.profile-icon{
+    align-self:center;
+    justify-self:left;
+   grid-column-start: 2;
+   
+}

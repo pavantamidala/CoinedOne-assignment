@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import chartData from '../store/store'
+import React, { useEffect } from 'react'
+import Header from './header/Header'
 import {connect} from 'react-redux';
 import {getChartData} from '../store/store'
 import SplitButton from './SplitButton/SplitButton'
-import {useHistory} from 'react-router-dom'
+
 function ConnectLoadData(props) {
     
     useEffect(()=>{
         props.getChartData()
     },[])
-    console.log("loading data")
-    let history = useHistory()
-    console.log(history.location.pathname)
-    
     return(
         <React.Fragment>
-            <h1> Load data </h1>
+            <Header />
+            <h3 className="summary-title">Activities Summary</h3>
             <SplitButton  />
         </React.Fragment>
     )

@@ -2,6 +2,7 @@ import DeviceUsage from './ByDevice/DeviceUsage'
 import RoundChart from './Charts/RoundChart'
 import React from 'react'
 import {connect} from 'react-redux'
+import "../styles/ClassTime.css"
 function ConnectedClassTime(props) {
     let temporary = props.store.data
     let labels = ["Total Time","Class Time"]
@@ -18,11 +19,18 @@ function ConnectedClassTime(props) {
     let loading = props.store.loading
     return (
         <React.Fragment>
-            
-            {loading === false && <div>
-                <RoundChart labels={labels} data={values} />
+            <div className="nested-div">
+
+            {loading === false && <div className="alltime-container">
+                <div className="round-chart">
+
+                <RoundChart  labels={labels} data={values} />
+                </div>
+                <div className="device-usage-data">
                 <DeviceUsage deviceUsage={deviceUsage} />
+                </div>
             </div>}
+            </div>
 
         </React.Fragment>
     )

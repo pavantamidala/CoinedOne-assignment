@@ -1,0 +1,24 @@
+#rangeValue{
+    display: none;
+}
+
+.form-element input[type="range"] {
+  -webkit-appearance:none;
+  width: 200px;
+height: 21.8px;
+margin-top: 40%;
+  background: #E4EFFF;
+border-radius: 12px;
+  outline:none;
+  overflow:hidden;
+}
+.form-element input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width:30px;
+  height:21.8px;
+  display: block;
+  background:#2FED51;
+  border-radius:10px;
+  box-shadow:-350px 0px 0px 340px #2FED51;
+  cursor:pointer;
+}

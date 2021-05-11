@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import RoundChart from './Charts/RoundChart';
 import DeviceUsage from './ByDevice/DeviceUsage'
+import "../styles/ClassTime.css"
 function ConnectStudyTime(props) {
     let temporary = props.store.data
     let labels = ["Study", "Total"]
@@ -19,11 +20,18 @@ function ConnectStudyTime(props) {
     return (
         <React.Fragment>
             
-            {loading === false && <div>
-                <RoundChart labels={labels} data={values} />
-                <DeviceUsage deviceUsage={deviceUsage} />
-            </div>}
+            <div className="nested-div">
 
+                {loading === false && <div className="alltime-container">
+                    <div className="round-chart">
+
+                        <RoundChart labels={labels} data={values} />
+                    </div>
+                    <div className="device-usage-data">
+                        <DeviceUsage deviceUsage={deviceUsage} />
+                    </div>
+                </div>}
+            </div>
         </React.Fragment>
     )
 }

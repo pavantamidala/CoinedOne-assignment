@@ -1,15 +1,26 @@
 import React from 'react'
 import { Doughnut } from 'react-chartjs-2'
 import mockdata from '../../mockdata/mockdata';
-import '../../styles/RoundChart.css';
 
-
+// style = {{ width: "220px", height: "200px" }}
 function RoundChart(props) {
+    console.log(Doughnut)
     return (
-        <div className="round-chart">
-            <Doughnut data={mockdata(props.labels, props.data)} options={{
+
+        <div >
+            <Doughnut style={{ width: "220px", height: "200px" }} data={mockdata(props.labels, props.data)} options={{
                 responsive: true,
                 maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "All Screen Time",
+                        fontSize: 20
+                    }, legend: {
+                        display: true,
+                        position: 'bottom'
+                    }
+                }
             }} />
         </div>
     )

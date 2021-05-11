@@ -2,6 +2,8 @@ import React from 'react';
 import DeviceUsage from './ByDevice/DeviceUsage'
 import { connect } from 'react-redux';
 import RoundChart from './Charts/RoundChart'
+import '../styles/AllScreenTime.css'
+import LineChart from './Charts/LineChart'
  function ConnectedFreeTime(props) {
     let temporary = props.store.data
     let labels = ["Free","Total"]
@@ -19,10 +21,20 @@ import RoundChart from './Charts/RoundChart'
     return (
         <React.Fragment>
             
-            {loading === false && <div>
-                <RoundChart labels={labels} data={values} />
-                <DeviceUsage deviceUsage={deviceUsage} />
-            </div>}
+            <div className="nested-div">
+
+                {loading === false && <div className="alltime-container">
+                    <div className="round-chart">
+                        <RoundChart labels={labels} data={values} />
+                    </div>
+                    <div className="range-chart">
+                        <LineChart freeTime={temporary.chartData.freeTime.total} freeTimeMaxUsage={props.store.data.freeTimeMaxUsage} />
+                    </div>
+                    <div className="device-usage-data">
+                        <DeviceUsage deviceUsage={deviceUsage} />
+                    </div>
+                </div>}
+            </div>
 
         </React.Fragment>
     )
