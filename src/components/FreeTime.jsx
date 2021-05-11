@@ -22,7 +22,7 @@ import LineChart from './Charts/LineChart'
         <React.Fragment>
             
             <div className="nested-div">
-
+                {loading === true && <h3>Loadin...</h3>}
                 {loading === false && <div className="alltime-container">
                     <div className="round-chart">
                         <RoundChart title="Free Time" labels={labels} data={values} />
